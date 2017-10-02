@@ -1,0 +1,9 @@
+h1 {
+  color: red;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s; }
