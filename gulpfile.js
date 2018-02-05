@@ -3,9 +3,11 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     sass = require('gulp-sass'),
     useref = require('gulp-useref'),
+    rimraf = require('rimraf'),
     gulpIf = require('gulp-if'),
     uglify = require('gulp-uglify'),
     csso = require('gulp-csso'),
+    concat = require('gulp-concat'),
     prefix = require('gulp-autoprefixer');
 
 gulp.task('server', function() {
@@ -18,7 +20,7 @@ gulp.task('server', function() {
 });
 
 gulp.task('styles', function(){
-  gulp.src('./app/sass/**/*.sass')
+  gulp.src('./app/sass/**/**.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix({
       browsers: ['last 15 versions']
@@ -27,10 +29,14 @@ gulp.task('styles', function(){
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', function(){
+gulp.task('clean', function(cb) {
+  rimraf('./build' , cb);
+});
+
+gulp.task('build', ['clean'], function(){
   gulp.src('./app/*.html')
     .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
+    //.pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', csso()))
     .pipe(gulp.dest('./build'))
 })

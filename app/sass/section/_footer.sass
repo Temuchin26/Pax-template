@@ -1,15 +1,37 @@
 .footer
   background-color: #0149a1
-  &__cont
-    @extend %container
-    padding: 90px 0px 50px 0px
+  .container
+    padding: 90px 0px 200px 0px
+    @media (max-width: 994px)
+      padding: 90px 20px 200px 20px
   &__items
+    padding-bottom: 135px
     display: flex
     justify-content: space-between
-    text-align: left
-    padding-bottom: 135px
-  &__text
+    @media (max-width: 772px)
+      flex-wrap: wrap
+  &__wrap
+    @media (max-width: 772px)
+      width: 50%
+  &__link
+    max-width: 140px
     font-size: 18px
     font-weight: 300
     line-height: 2
+    display: block
+    @media (max-width: 772px)
+      margin: 0 auto
+  a
     color: white
+    &:hover
+      text-decoration: none
+  &__copy
+    font-weight: 300
+    font-size: 18px
+    line-height: 1.33
+    color: #B9C7E1
+    text-align: center
+  &__spanA
+    font-size: 20px
+    color: white
+    display: inline

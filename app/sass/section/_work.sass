@@ -1,26 +1,38 @@
 .work
   background-color: #0149a1
-  &__cont
-    @extend %container
+  .container
     padding: 125px 0px 130px 0px
+    @media (max-width: 700px)
+      padding: 125px 30px 130px
+      text-align: justify
+  .row
+    padding: 115px 0px 90px 0px
+    display: flex  
+    align-items: center
+    @media (max-width: 700px)
+      padding-top: 60px
+  &__img
+    width: 100%
+    @media (max-width: 990px)
+      padding-bottom: 60px
   &__title
     @extend %title
     color: white
-  &__subtitle
+    text-align: center
+    @media (max-width: 700px)
+      line-height: 1.1
+  &__subTitle
     @extend %subtitle
     color: #5483bb
-    padding-bottom: 115px
-  &__wrap
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding-bottom: 100px
-  &__text
-    @extend %subtitleItem
-    color: white
-    text-align: left
-    padding-left: 55px
+    text-align: center
   &__btn
     @extend %btn
     color: #0149a1
     background-color: white
+  &__text
+    font-size: 18px
+    line-height: 1.67
+    padding-bottom: 45px
+    color: white
+    &:last-child
+      padding: 0px

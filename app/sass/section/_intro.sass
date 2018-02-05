@@ -1,0 +1,75 @@
+.intro
+  .container
+    padding-top: 140px
+  &__title
+    @extend %title
+    @media (max-width: 400px)
+      font-size: 70px
+  &__subtitle
+    @extend %subtitle
+    @media (max-width: 400px)
+      font-size: 30px
+  &__btn
+    @extend %btn
+    margin: 110px 0px
+  &__img
+    z-index: 5
+    position: relative
+    width: 100%
+    @media (max-width: 400px)
+      left: -12px
+      width: 109%
+  .shape-cont
+    display: flex
+    justify-content: center
+  &__shape
+    z-index: 30
+    cursor: pointer
+    width: 135px
+    height: 60px
+    border-radius: 30px
+    background-color: white
+    position: absolute
+    top: 37%
+    display: flex
+    align-items: center
+    justify-content: space-around
+    padding: 0px 15px
+    @media (max-width: 400px)
+      width: 100px
+      height: 50px
+      top: 30%
+  &__shape-title
+    font-size: 18px
+    font-weight: bold
+    color: #0149a1
+  &__shape-img
+    width: 25px
+    height: 25px
+    padding-top: 4px
+  &__bg
+    position: absolute
+    opacity: 0
+    z-index: 2
+    top: 10%
+    transform: translateX(0%)
+    max-width: 50%
+    max-height: 60%
+    @media (max-width: 850px)
+      max-width: 50%
+      max-height: 54%
+    @media (max-width: 350px)
+      display: none
+.wrap
+  display: flex
+  justify-content: center
+.slidein
+  opacity: 0
+  transition: 0.8s
+
+.active
+  opacity: 1
+  &:first-child
+    transform: translateX(-85%)
+  &:last-child
+    transform: translateX(150%)

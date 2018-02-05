@@ -1,12 +1,24 @@
 .service
-  background: linear-gradient(0deg, #edeff1 5%, #ffffff 65%, #ffffff, #edeff1)
-  &__cont
-    @extend %container
+  .container
     display: flex
     justify-content: space-between
-    align-items: center
     padding: 30px 0px 130px 0px
-  &__title
+    @media (max-width: 994px)
+      flex-wrap: wrap
+    @media (max-width: 560px)
+      justify-content: center
+  &__item
+    max-width: 250px
+    @media (max-width: 994px)
+      &:nth-child(3), &:nth-child(4)
+        padding-top: 40px
+    @media (max-width: 560px)
+      padding-top: 40px
+  &__item-title
     @extend %titleItem
-  &__subtitle
+  &__item-text
     @extend %subtitleItem
+  &__img
+    transition: 0.4s
+    &:hover
+      transform: rotateY(180deg) scale(1.3)
